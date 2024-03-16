@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            input {
+            
+                color: rgb(248, 248, 248);
+                background-color: rgb(241, 187, 199);
+            }
+            p{
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif;
+            }
+        </style>
+
+    </head>
+    <body>
+        <p> Nombre: <input type="text" id="Nombre" placeholder="Ingrese el nombre"></p>
+        <p> Apellido: <input type="text" id="Apellido" placeholder="Ingrese el apellido"></p>
+        <p> Edad: <input type="text" id="Edad" placeholder="Ingrese la edad"></p>
+        <p> Teléfono: <input type="text" id="Telefono" placeholder="Ingrese el telefono"></p>
+        <p> Ciudad: <select id="Ciudad">
+                        <optgroup label="Buenos Aires">
+                            <option value="Chascomus">Chascomus</option>
+                            <option value="Ranchos">Ranchos</option>
+                            <option value="Lezama">Lezama</option>
+                            <option value="Castelli">Castelli</option>
+                            <option value="Otra">Otra ciudad en PBA</option>
+                        </optgroup>
+                        <optgroup label="Otras provincias">
+                            <option value="Otra">Otra ciudad fuera de PBA</option>
+                        </optgroup>             
+                    </select>
+        </p>
+        <p> Elige alguna de los siguientes artistas/bandas de musica o ingresa una nueva:
+            <input list="musica" placeholder=""/></label>  
+                <datalist id="musica">
+                    <option value="TXT"></option>
+                    <option value="New Jeans"></option>
+                    <option value="Le Sserafim"></option>
+                    <option value="Twice"></option>
+                    <option value="Blackpink"></option>
+                    <option value="Lady Gaga"></option>
+                    <option value="Ariana Grande"></option>
+                </datalist>
+        </p>
+        <p>Otros datos:<textarea></textarea></p>
+        <p> <input type="submit" value="Mostrar los datos ingresados"></p>
+        
+    </body>
+</html>
