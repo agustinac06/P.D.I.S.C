@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #uno {
+                color: rgb(7, 0, 54);
+            }
+            .divs{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            div{
+                color: rgb(241, 54, 132);
+            }
+            p{
+                font-weight:bold;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Responda este formulario</p>
+            <form>
+                <div id="uno"> <p> DNI: </p> <input type="text" id="Nombre" placeholder="Ingrese el DNI"></div>
+        
+                <div class="divs"><p>Describase en 3 palabras :<textarea></textarea></p></div>
+
+
+                <div class="divs"> <p>Marque los numeros pares:</p> 
+                    <input type="checkbox">
+                    <label for="check">8</label>
+                    <input type="checkbox">
+                    <label for="check">11</label>
+                    <input type="checkbox">
+                    <label for="check">27</label>
+                    <input type="checkbox">
+                    <label for="check">14</label>
+                    <input type="checkbox">
+                    <label for="check">32</label>
+                </div>
+
+                <div class="divs"><p>Elige uno de los siguientes sabores:</p></div>
+                    <input type="radio">
+                    <label for="Dulce de Leche">Dulce de leche</label>
+                    <input type="radio">
+                    <label for="Chocolate">Chocolate</label>
+                    <input type="radio">
+                    <label for="Frutilla">Frutilla</label>
+
+
+                <div class="divs"><p> Color: </p> <select id="Color"></div> 
+                    <option value="Blanco">Blanco</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Rosa">Rosa</option>
+                    <option value="Rojo">Rojo</option>
+                    <option value="Verde">Verde</option>
+                    <option value="Azul">Azul</option>
+                    <option value="Amarillo">Amarillo</option>
+                    <option value="Naranja">Naranja</option>
+                    </select>
+                
+
+                <div class="divs"><p> Elige alguna de los siguientes canciones o ingrese una nueva:</p></div>
+                    <input list="Canciones" placeholder=""/></label>  
+                        <datalist id="Canciones">
+                            <option value="Do I Wanna Know- Arctic Monkeys"></option>
+                            <option value="Paparazzi- Lady Gaga"></option>
+                            <option value="Seasons- wave to earth"></option>
+                            <option value="Cool with you- New Jeans"></option>
+                            <option value="Growing pain- TXT"></option>
+                            <option value="Ring- TXT"></option>
+                            <option value="My Love All Mine- Mitski"></option>
+                        </datalist>
+                
+            </form>
+    </body>
+</html>
