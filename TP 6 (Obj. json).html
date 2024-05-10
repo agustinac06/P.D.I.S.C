@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Objetos (json)</title>
+     </head>
+    <body>
+        <div id="contenido"></div>
+        <script>
+
+            let persona1 = { "nombre": "Agustina", "apellido":"Cipolla" };
+            console.log(persona1);
+
+            console.log("Nombre:", persona1.nombre);
+            console.log("Apellido:", persona1.apellido);
+
+            let persona2 = {"nombre":"Mercedes", "apellido":"Canosa"};
+            let personas = [persona1, persona2];
+             personas.forEach(personaActual => {
+               console.log(personaActual);
+           });
+
+           let persona3 = {};
+           persona3.nombre= "Lucas";
+           persona3.apellido="Orbe";
+           persona3.edad =  18;
+           personas.push(persona3);
+           personas.forEach(personaActual => {
+            console.log(personaActual);
+        });
+
+            let objetoMixto = {
+            texto: "Espresso",    
+            numero: 8,            
+            objeto: { clave: "hola" }, 
+            lista: [1, 2, 3, 4],    
+            booleano: true,         
+            nulo: null              
+            };
+
+            console.log(objetoMixto);
+
+           const myObj = {"nombre": "Matias", "edad": 18, "ciudad": "Chascomus"};
+           const myJSON = JSON.stringify(myObj);
+           console.log(myJSON);
+
+           const text = '{"nombre":"Luciano","edad":"18"}';
+           let obj = JSON.parse(text);
+           console.log(obj);
+
+           const myObj1 = { nombre: "Taehyun", edad: 22, ciudad: "Seul" };
+           const myJSON1 = JSON.stringify(myObj1);
+           localStorage.setItem("testJSON", myJSON1);
+           let text1 = localStorage.getItem("testJSON");
+           localStorage.setItem("testJSON", myJSON1);
+           const objetorec = JSON.parse(text1);
+           console.log("Objeto recuperado:", objetorec);
+
+           let miAmiga = {nombre:"Martina", ciudad:"Chascomus", edad:19};
+           let descripcion = `El nombre de mi amiga es ${miAmiga.nombre} y tiene ${miAmiga.edad} años`;
+           console.log(descripcion);
+
+          let objetosRetirados = [
+          {tipo:"netbook",codigo:15,retirada:true},
+          {tipo:"netbook",codigo:1,retirada:false}
+          ];
+            let miHtml="";
+            document.querySelector("#contenido").innerHTML="";
+            objetosRetirados.forEach(elem=>{
+                miHtml += `<div>
+                    <span>Tipo: ${elem.tipo}</span>
+                    <span>Código: ${elem.codigo}</span>
+                    <span>Retirada: ${elem.retirada ? 'Sí' : 'No'}</span>
+                  </div>`;                 
+            });
+            document.querySelector("#contenido").innerHTML=miHtml;
+        
+        </script>
+    </body>
+</html>
