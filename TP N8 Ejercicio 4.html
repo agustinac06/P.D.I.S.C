@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordenadas del Mouse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #coordenadas {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Muestra de Coordenadas del Mouse</h1>
+    <div id="coordenadas">Posición del mouse: </div>
+
+
+    <script>
+
+const coordenadasElemento = document.getElementById('coordenadas');
+
+function mostrarCoordenadas(event) {
+    const x = event.clientX; 
+    const y = event.clientY; 
+
+    coordenadasElemento.textContent = `Posición del mouse: (${x}, ${y})`;
+}
+
+document.addEventListener('mousemove', mostrarCoordenadas);
+    </script>
+</body>
+</html>
