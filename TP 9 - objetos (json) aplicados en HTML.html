@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Profesor</title>
+</head>
+<body>
+    <h1>Registro de Profesor</h1>
+    <form id="formProfesor">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" ><br><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" ><br><br>
+        <label for="dni">DNI:</label>
+        <input type="number" id="dni" name="dni"><br><br>
+        <button type="submit">Registrar profesor</button>
+    </form>
+
+    <h1>Registro de Materia</h1>
+    <form id="formMateria">
+        <label for="nombre">Nombre de la Materia:</label>
+        <input type="text" id="nombre" name="nombre" ><br><br>
+        <label for="año">Año:</label>
+        <input type="number" id="año" name="año"  ><br><br>
+        <label for="profesor">Profesor:</label>
+        <input type="text" id="profesor" name="profesor" ><br><br>
+        <button type="submit">Registrar materia</button>
+
+    </form>
+
+    <h1>Registro de Equipo</h1>
+    <form id="formEquipo">
+        <label for="tipo">Tipo de Equipo:</label>
+        <select id="tipo" name="tipo">
+            <option value="netbook">Netbook</option>
+            <option value="mouse">Mouse</option>
+            <option value="teclado">Teclado</option>
+        </select><br><br>
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" value><br><br>
+        <button type="submit">Registrar equipo</button>
+
+    </form>
+
+    <div id="dispositivosGuardados"></div>
+    <h1>Dispositivos retirados y disponibles</h1>
+    <div id="contenido"></div>
+
+    <script>
+    let data = [
+                {
+                   "id":1,
+                   "fecha": "25-6-2024 10:30:00",
+                   "profesor":{
+                       "id":1,
+                       "nombre":"Carlos",
+                       "apellido":"Cipolla"
+                    },
+                    "materia":{
+                        "id":9,
+                        "nombre":"Sistemas Operativos",
+                        "año":5
+                    },
+                    "aula": "Laboratorio 2",
+                    "objetos": [
+                        {"id":10, "tipo": "netbook", "codigo":25},
+                        {"id":5, "tipo":"mouse", "codigo":10},
+                        {"id":7, "tipo":"teclado", "codigo":1}
+                    ]
+                },
+                {
+                    "id":2,
+                    "fecha": "26-6-2022 17:32:00",
+                    "profesor":{
+                        "id":2,
+                        "nombre":"Miriam",
+                        "apellido":"Franco"
+                    },
+                    "materia":{
+                        "id":10,
+                        "nombre":"Sistemas digitales",
+                        "año":6
+                    },
+                    "aula": "Laboratorio 1",
+                    "objetos": [
+                        {"id":0, "tipo": "netbook", "codigo":1},
+                        {"id":6, "tipo":"mouse", "codigo":2}
+                    ]
+                }
+               
+            ];
+
+            const contenidoDiv = document.getElementById("contenido");
+
+            data.forEach(retiro=>{
+                let html= `
+                    <div class="retiro">
+                        <strong>Fecha:</strong> ${retiro.fecha} <br>
+                        <strong>Profesor:</strong> ${retiro.profesor.nombre} ${retiro.profesor.apellido} <br>
+                        <strong>Materia:</strong> ${retiro.materia.nombre} (año${retiro.materia.año}) <br>
+                        <strong>Aula:</strong> ${retiro.aula} <br>
+                        <strong>Dispositivos retirados:</strong> <br>
+                        <ul>
+
+                `;
+                retiro.objetos.forEach(objeto=>{
+                    html += `
+                    <li>
+                        Tipo: ${objeto.tipo}, Código: ${objeto.codigo}
+                    </li>
+                `;
+                });
+
+                html +=`
+                    </ul>
+                </div>
+                `;
+                contenidoDiv.innerHTML += html;
+            });
+    </script>
+</body>
+</html>
